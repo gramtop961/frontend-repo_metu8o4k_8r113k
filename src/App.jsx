@@ -1,26 +1,42 @@
-import { useState } from 'react'
+import React from 'react'
+import HeroSection from './components/HeroSection'
+import Services from './components/Services'
+import Tools from './components/Tools'
+import Portfolio from './components/Portfolio'
+import ContactCTA from './components/ContactCTA'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen w-full bg-[#05060a] text-white antialiased">
+      <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-[#05060a]/60 bg-[#05060a]/80 border-b border-white/10">
+        <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-12 h-14 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_25px_6px_rgba(34,211,238,0.55)]" />
+            <span className="text-sm tracking-wide text-white/80">Car Edit Portfolio</span>
+          </div>
+          <nav className="hidden sm:flex items-center gap-6 text-sm text-white/70">
+            <a href="#about" className="hover:text-white">About</a>
+            <a href="#tools" className="hover:text-white">Tools</a>
+            <a href="#portfolio" className="hover:text-white">Work</a>
+            <a href="#contact" className="hover:text-white">Contact</a>
+          </nav>
         </div>
-      </div>
+      </header>
+
+      <main>
+        <HeroSection />
+        <Services />
+        <Tools />
+        <Portfolio />
+        <ContactCTA />
+      </main>
+
+      <footer className="border-t border-white/10 bg-[#05060a]">
+        <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-12 py-10 text-sm text-white/50 flex items-center justify-between">
+          <p>© {new Date().getFullYear()} Automotive Video Editor — Premier Pro • After Effects • DaVinci Resolve</p>
+          <a href="#" className="hover:text-white/80">Back to top</a>
+        </div>
+      </footer>
     </div>
   )
 }
